@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/robot?serverTimezone=UTC&useUnicode=true&nullCatalogMeansCurrent=true&characterEncoding=UTF-8
+    username: root
+    password: Xjs52708572
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 9999
+#mybatis-plus
+logging:
+  level:
+    root: info
+    com.lrm: info
+ #配置mybatis-plus映射路径
+mybatis-plus:
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:com/example/springbootmybatisrobot/Mapper/xml/*.xml
+  type-aliases-package: com.example.springbootmybatisrobot.po
+  global-config:
+    refresh-mapper: true
